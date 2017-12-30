@@ -98,3 +98,15 @@ console.log({allAdults});  // false
 // Find
 const comment = comments.find(comment => comment.id === 342901);
 console.log(comment);
+
+
+// FindIndex
+const index = comments.findIndex(comment => comment.id === 342902);
+console.log('index of comment to be deleted: ', index);
+
+const newComments = [
+    ...comments.slice(0, index),
+    ...comments.slice(index + 1)
+];
+console.table(comments);
+console.table(newComments);
