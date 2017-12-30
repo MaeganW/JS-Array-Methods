@@ -30,26 +30,27 @@ const comments = [
     { text: 'C U', id: 342905 },
 ]
 
-const cars = [
-    { name: 'Buick', year: 1987 },
-    { name: 'Ford', year: 1955 },
-    { name: 'Toyota', year: 1976 },
-    { name: 'Honda', year: 1999 },
+const people = [
+    { name: 'Jane', year: 1987 },
+    { name: 'Nick', year: 1955 },
+    { name: 'Kyle', year: 1976 },
+    { name: 'Jesse', year: 2009 },
 ]
 
+
+// Filter
 const brownPets = pets.filter(pet => pet.color === 'brown');
 console.table(brownPets);
 
+
+// Map
 const nameAndAnimal = pets.map(pet => `${pet.name} the ${pet.animal}`);
 console.log(nameAndAnimal);
 
+
+// Sort
 const orderedByEldest = pets.sort((a,b) => (a.age < b.age) ? 1 : -1);
 console.table(orderedByEldest);
-
-const totalYears = pets.reduce((total, pet) => {
-    return total + pet.age;
-}, 0);
-console.log(totalYears);
 
 const alpha = philosophers.sort((lastOne, nextOne) => {
     const aSplit = lastOne.split(' ');
@@ -62,6 +63,13 @@ const alpha = philosophers.sort((lastOne, nextOne) => {
 });
 console.log(alpha);
 
+
+// Reduce
+const totalYears = pets.reduce((total, pet) => {
+    return total + pet.age;
+}, 0);
+console.log(totalYears);
+
 const numberPerSpecies = pets.reduce((obj, pet) => {
     if(!obj[pet.animal]) {
         obj[pet.animal] = 0;
@@ -70,3 +78,23 @@ const numberPerSpecies = pets.reduce((obj, pet) => {
     return obj;
 }, {});
 console.log(numberPerSpecies);
+
+
+// Some
+const someAdults = people.some( person => {
+    const currentYear = (new Date()).getFullYear();
+    return currentYear - person.year >= 20;
+});
+console.log({someAdults});  // true
+
+
+// Every
+const allAdults = people.every(person => (
+    (new Date()).getFullYear() - person.year >= 20
+));
+console.log({allAdults});  // false
+
+
+// Find
+const comment = comments.find(comment => comment.id === 342901);
+console.log(comment);
