@@ -1,4 +1,18 @@
-const philosophers = ["Theodor Adorno", "Thomas Aquinas", "Hannah Arendt", "Aristotle", "Augustine", "Francis Bacon", "Roland Barthes", "Georges Bataille", "Jean Baudrillard", "Simone de Beauvoir", "Walter Benjamin", "George Berkeley"];
+const philosophers = [
+    "Theodor Adorno",
+    "Thomas Aquinas",
+    "Hannah Arendt",
+    "Aristotle",
+    "Augustine",
+    "Francis Bacon",
+    "Roland Barthes",
+    "Georges Bataille",
+    "Jean Baudrillard",
+    "Simone de Beauvoir",
+    "Walter Benjamin",
+    "George Berkeley"
+];
+
 const pets = [
     {name: "Buttercup", animal: "dog", color: "brown", age: 3},
     {name: "Daisy", animal: "dog", color: "yellow", age: 10},
@@ -7,6 +21,21 @@ const pets = [
     {name: "Talcum", animal: "sheep", color: "white", age: 6},
     {name: "Chip", animal: "hen", color: "brown", age: 2},
 ];
+
+const comments = [
+    { text: 'lol', id: 342901 },
+    { text: 'I O U', id: 342902 },
+    { text: 'Ikr', id: 342903 },
+    { text: 'ttfn', id: 342904 },
+    { text: 'C U', id: 342905 },
+]
+
+const cars = [
+    { name: 'Buick', year: 1987 },
+    { name: 'Ford', year: 1955 },
+    { name: 'Toyota', year: 1976 },
+    { name: 'Honda', year: 1999 },
+]
 
 const brownPets = pets.filter(pet => pet.color === 'brown');
 console.table(brownPets);
